@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <title>title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="lib/jquery-1.6.4.js"></script>
+        <script src="lib/jquery.mobile-1.1.0.js"></script>
+        <link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
+        />
+        <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <div data-role="page" id="page1spash">
+            <div data-role="header">
+                <h1>App for institutt</h1>
+            </div>
+            <div data-role="content">
+                <img src="images/L3Rvb2xzL3Bob3RvYWxidW1fdmlldy9jdXN0b21lci9pbWcvNDA2Ny9tZWRpdW0yYy80MDY3MjMuanBnL0Nyb3AvP3g9MiZ5PTEmd2lkdGg9NzAwJmhlaWdodD00NjY.jpeg"
+                width="800" height="400" style="display: block; margin: 0 auto" />
+                <div class="div-widget">
+                    <span>Splash screen - first page that is viewed</span>
+                </div>
+                <a data-role="button" href="#page2GroupName">This button will be replaced. Perhaps a solution where the page automatically continue to the next page</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>Footer</h1>
+            </div>
+        </div>
+        <div data-role="page" id="page2GroupName">
+            <div data-role="content">
+                <div class="div-widget">
+                    <img src="images/Stavanger_-_Norway.jpg" width="800" height="400" style="display: block; margin: 0 auto"
+                    />
+                </div>
+                <form action="http://" method="POST">
+                    <div data-role="fieldcontain">
+                        <label for="text1">Sett gruppenavn</label>
+                        <input type="text" id="text1" />
+                    </div>
+                    <a data-role="button" href="#page3mainMenu">Start app</a>
+                </form>
+            </div>
+        </div>
+        <div data-role="page" id="page3mainMenu">
+            <div data-role="header">
+                <h1>Hovedside - app</h1>
+                <a data-role="button" href="#page2GroupName" data-iconshadow="false">Back</a>
+            </div>
+            <div data-role="content">
+                <div class="div-widget">
+                    <img src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="600" height="300" />
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b"></div>
+                    <div class="ui-block-c"></div>
+                    <div class="ui-block-a">
+                        <a data-role="button" href="#page6Information">Informasjon</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button" href="#page4Quiz">Quiz</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a data-role="button">Gangetabell</a>
+                    </div>
+                    <div class="ui-block-a">
+                        <a data-role="button">Interessant å vite</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button">Olje og gass historier</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a data-role="button">Periodetabell</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page4Quiz">
+            <div data-role="header">
+                <h1>Quiz</h1>
+                <a data-role="button" href="#page3mainMenu">Exit</a>
+            </div>
+            <div data-role="content">
+                <form action="http://" method="POST">
+                    <span>Question fra db</span>
+                </form>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a data-role="button" href="#page5QuizFinish">Button</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button">Button</a>
+                    </div>
+                    <div class="ui-block-a">
+                        <a data-role="button">Button</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button">Button</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page5QuizFinish">
+            <div data-role="header">
+                <h1>Du er ferdig</h1>
+            </div>
+            <div data-role="content">
+                <img src="images/Uis.png" style="display: block; margin: 0 auto" />
+                <a data-role="button" href="#page3mainMenu">meny</a>
+            </div>
+        </div>
+        <div data-role="page" id="page6Information">
+            <div data-role="header">
+                <h1>Informasjon om petroleum på UiS</h1>
+                <a data-role="button" href="#page3mainMenu"
+                data-inline="true">Back</a>
+            </div>
+            <div data-role="content">
+                <form action="http://" method="POST">
+                    <span>Hva gjør vi?</span>
+                    <textarea></textarea>
+                </form>
+                <form action="http://" method="POST">
+                    <span>Studiemuligheter</span>
+                    <textarea></textarea>
+                </form>
+                <form action="http://" method="POST">
+                    <span>Mer info</span>
+                    <textarea></textarea>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
