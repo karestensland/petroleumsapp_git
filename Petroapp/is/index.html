@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="lib/jquery-1.6.4.js"></script>
+		<script src="lib/jquery.mobile-1.1.0.js"></script>
+		<link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet"	/>
+		<link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />
+		<link href="src/css/app.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div data-role="page" id="page1GroupName">
+			<div data-role="header" id="txtHeader">
+				<h1>App for besøkende til petroleumsinstituttet ved UiS</h1>
+			</div>
+			<div data-role="content">
+				<img id="imgStart" src="images/uis.jpeg"
+				width="800" height="500" style="display: block; margin: 0 auto" />
+				<form action="http://" method="POST">
+					<div data-role="fieldcontain">
+						<label for="txtGroup">Sett gruppenavn:</label>
+						<input type="text" id="txtGroup" />
+					</div>
+					<a data-role="button" id="btnStart" href="#page2mainMenu">Start app</a>
+				</form>
+			</div>
+		</div>
+		<div data-role="page" id="page2mainMenu">
+			<div data-role="header" id="txtHeader">
+				<h1>Hovedmeny</h1>
+				<a data-role="button" id="btnBack" href="#page1GroupName">Back</a>
+			</div>
+			<div data-role="content">
+				<img id="imgMain" src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="700" height="350"
+				style="display: block; margin: 0 auto" />
+				<div class="ui-grid-b">
+					<div class="ui-block-a"></div>
+					<div class="ui-block-b"></div>
+					<div class="ui-block-c"></div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page5Information">Informasjon</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page3Quiz">Quiz</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page14Math">Gangetabell</a>
+					</div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page6Knowledge">Interessant å vite</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page13History">Historie</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page15References">Referanser</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page3Quiz">
+			<div data-role="header" id="txtHeader">
+				<h1>Quiz</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu">Exit</a>
+			</div>
+			<div data-role="content">
+				<form action="http://" method="POST">
+					<div class="div-widget">
+						<h4>Question fra db</h4>
+					</div>
+				</form>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a data-role="button" id="btnQuiz" href="#page4QuizFinish">Button</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnQuiz">Button</a>
+					</div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnQuiz">Button</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnQuiz">Button</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page4QuizFinish">
+			<div data-role="header" id="txtHeader">
+				<h1>Du er ferdig</h1>
+			</div>
+			<div data-role="content">
+				<img src="images/Uis.png" style="display: block; margin: 0 auto" />
+				<a data-role="button" href="#page2mainMenu">Hovedmeny</a>
+			</div>
+		</div>
+		<div data-role="page" id="page5Information">
+			<div data-role="header" id="txtHeader">
+				<h1>Informasjon om Institutt</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu"
+				data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<blockquote class="txthistorie">
+
+						<blockquote class="txthistorie">
+							<span id="txtInfo"><h1>Institutt for petroleumsteknologi</h1></span>
+							<p>
+								Institutt for petroleumsteknologi er et sterkt fagmiljø ved Universitetet i Stavanger, med forskning og utdanning som holder høyt internasjonalt nivå.
+							</p>
+							<p>
+								Instituttet satser stort på internasjonalisering, med bl.a. utvikling av engelsksprålige studier og stor mobilitet blant vitenskapelige ansatte og studenter. Instituttet tilbyr en internasjonal mastergrad i petroleumsteknologi og har et årlig opptak av 20 internasjonale studenter, i tillegg til 40 norske studenter.
+							</p>
+							<br>
+							De viktigste forskningsområdene ved instituttet er:
+							<br>
+							<ul>
+								<li>
+									Boreteknologi
+								</li>
+								<li>
+									Investerings- og beslutningsanalyse i petroleumssektoren
+								</li>
+								<li>
+									Naturgassteknologi
+								</li>
+								<li>
+									Petroleumsgeologi
+								</li>
+								<li>
+									Produksjonsteknologi
+								</li>
+								<li>
+									Reservoarteknologi
+								</li>
+							</ul>
+
+							<p>
+								Instituttet jobber tett sammen med IRIS (International Research Institute of Stavanger) og forskjellige aktører i oljeindustrien.
+							</p>
+							<dl>
+								<dt>
+									<strong>Kontakt oss</strong>
+								</dt>
+								<dt>
+									Universitetet i Stavanger
+									Institutt for petroleumsteknologi
+								</dt>
+								<dt>
+									4036 Stavanger
+								</dt>
+								<dt>
+									<br>
+								</dt>
+								<dt>
+									<strong>Besøksadresse:</strong>
+								</dt>
+								<dt>
+									Kjølv Egelands hus
+								</dt>
+								<dt>
+									E-fløy, 3. etasje
+								</dt>
+								<dt>
+									<br>
+								</dt>
+								<dt>
+									Tel.: 51 83 17 25
+								</dt>
+								<dt>
+									Fax: 51 83 20 50
+								</dt>
+								<dt>
+									E-post: ipt.service@uis.no
+								</dt>
+							</dl>
+
+						</blockquote>
+
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page6Knowledge">
+			<div data-role="header" id="txtHeader">
+				<h1>Interessant å vite</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu">Back</a>
+			</div>
+			<div data-role="content">
+				<img id="imgMain" src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="700" height="350"
+				style="display: block; margin: 0 auto" />
+				<div class="ui-grid-b">
+					<div class="ui-block-a"></div>
+					<div class="ui-block-b"></div>
+					<div class="ui-block-c"></div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page7Exploration">Leting</a>
+
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page8Production">Utvinning</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page9Drilling">Boring</a>
+					</div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page10Chemistry">Kjemi</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page11Refining">Raffinering</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page12Geology">Geologi</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page7Exploration">
+			<div data-role="header" id="txtHeader">
+				<h1>Leting</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page8Production">
+			<div data-role="header" id="txtHeader">
+				<h1>Produksjon</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+
+					<div>
+						<blockquote class="txthistorie">
+							<span id="txtInfo"><h1>Utvinnning</h1></span>
+							<a href="" class="thumbs"><img src="images/plattform.png" style="width:304px;height:228px"/></a>
+							<p>
+								Frem mot 2014 falt produksjonen av olje, mens produksjonen av gass fortsatte å øke. I 2012 sto Norge for 2,1 prosent av verdens samlede oljeproduksjon og 3,4 prosent av den samlede produksjonen av gass. Petroleumssektoren sto samme år for 52 prosent av Norges samlede eksport.
+
+							</p>
+							<p>
+								Frem til midt på 1990-tallet gikk det meste av inntektene fra norsk oljevirksomhet til nedbetaling av gjeld og privat og offentlig forbruk. Fra tidlig på 2000-tallet gikk det meste av statens inntekter fra virksomheten til oppbyggingen av et statlig fond. Ved inngangen til 2014 var dette oljefondet (Statens pensjonsfond – Utland) verdsatt til over 5000 milliarder kroner. Det tilsvarte mer enn 1 million per nordmann.
+							</p>
+							<p>
+								Norsk oljevirksomhet eller den norske oljeerfaringen har i mange internasjonale sammenhenger blitt fremhevet som et av få vellykkede eksempler på at en nasjon har forvaltet en stor petroleumsressurs på en måte som har kommet hele samfunnet til gode.
+
+							</p>
+							<p>
+								Historien er imidlertid ikke noen rettlinjet utvikling preget av en gradvis, harmonisk tilnærming til utfordringene man sto overfor. Selv der man kom frem varige løsninger fantes det ofte en omfattende forhistorie preget av interessemotsetninger og konflikt
+							</p>
+							<p>
+								Frem mot 2014 falt produksjonen av olje, mens produksjonen av gass fortsatte å øke. I 2012 sto Norge for 2,1 prosent av verdens samlede oljeproduksjon og 3,4 prosent av den samlede produksjonen av gass. Petroleumssektoren sto samme år for 52 prosent av Norges samlede eksport.
+
+							</p>
+							<p>
+								Frem til midt på 1990-tallet gikk det meste av inntektene fra norsk oljevirksomhet til nedbetaling av gjeld og privat og offentlig forbruk. Fra tidlig på 2000-tallet gikk det meste av statens inntekter fra virksomheten til oppbyggingen av et statlig fond. Ved inngangen til 2014 var dette oljefondet (Statens pensjonsfond – Utland) verdsatt til over 5000 milliarder kroner. Det tilsvarte mer enn 1 million per nordmann.
+							</p>
+							<p>
+								Norsk oljevirksomhet eller den norske oljeerfaringen har i mange internasjonale sammenhenger blitt fremhevet som et av få vellykkede eksempler på at en nasjon har forvaltet en stor petroleumsressurs på en måte som har kommet hele samfunnet til gode.
+
+							</p>
+							<p>
+								Historien er imidlertid ikke noen rettlinjet utvikling preget av en gradvis, harmonisk tilnærming til utfordringene man sto overfor. Selv der man kom frem varige løsninger fantes det ofte en omfattende forhistorie preget av interessemotsetninger og konflikt
+							</p>
+							<p>
+								Frem mot 2014 falt produksjonen av olje, mens produksjonen av gass fortsatte å øke. I 2012 sto Norge for 2,1 prosent av verdens samlede oljeproduksjon og 3,4 prosent av den samlede produksjonen av gass. Petroleumssektoren sto samme år for 52 prosent av Norges samlede eksport.
+
+							</p>
+							<p>
+								Frem til midt på 1990-tallet gikk det meste av inntektene fra norsk oljevirksomhet til nedbetaling av gjeld og privat og offentlig forbruk. Fra tidlig på 2000-tallet gikk det meste av statens inntekter fra virksomheten til oppbyggingen av et statlig fond. Ved inngangen til 2014 var dette oljefondet (Statens pensjonsfond – Utland) verdsatt til over 5000 milliarder kroner. Det tilsvarte mer enn 1 million per nordmann.
+							</p>
+							<p>
+								Norsk oljevirksomhet eller den norske oljeerfaringen har i mange internasjonale sammenhenger blitt fremhevet som et av få vellykkede eksempler på at en nasjon har forvaltet en stor petroleumsressurs på en måte som har kommet hele samfunnet til gode.
+
+							</p>
+							<p>
+								Historien er imidlertid ikke noen rettlinjet utvikling preget av en gradvis, harmonisk tilnærming til utfordringene man sto overfor. Selv der man kom frem varige løsninger fantes det ofte en omfattende forhistorie preget av interessemotsetninger og konflikt
+							</p>
+							<p>
+								Frem mot 2014 falt produksjonen av olje, mens produksjonen av gass fortsatte å øke. I 2012 sto Norge for 2,1 prosent av verdens samlede oljeproduksjon og 3,4 prosent av den samlede produksjonen av gass. Petroleumssektoren sto samme år for 52 prosent av Norges samlede eksport.
+
+							</p>
+							<p>
+								Frem til midt på 1990-tallet gikk det meste av inntektene fra norsk oljevirksomhet til nedbetaling av gjeld og privat og offentlig forbruk. Fra tidlig på 2000-tallet gikk det meste av statens inntekter fra virksomheten til oppbyggingen av et statlig fond. Ved inngangen til 2014 var dette oljefondet (Statens pensjonsfond – Utland) verdsatt til over 5000 milliarder kroner. Det tilsvarte mer enn 1 million per nordmann.
+							</p>
+							<p>
+								Norsk oljevirksomhet eller den norske oljeerfaringen har i mange internasjonale sammenhenger blitt fremhevet som et av få vellykkede eksempler på at en nasjon har forvaltet en stor petroleumsressurs på en måte som har kommet hele samfunnet til gode.
+
+							</p>
+							<p>
+								Historien er imidlertid ikke noen rettlinjet utvikling preget av en gradvis, harmonisk tilnærming til utfordringene man sto overfor. Selv der man kom frem varige løsninger fantes det ofte en omfattende forhistorie preget av interessemotsetninger og konflikt
+							</p>
+							<p>
+								Frem mot 2014 falt produksjonen av olje, mens produksjonen av gass fortsatte å øke. I 2012 sto Norge for 2,1 prosent av verdens samlede oljeproduksjon og 3,4 prosent av den samlede produksjonen av gass. Petroleumssektoren sto samme år for 52 prosent av Norges samlede eksport.
+
+							</p>
+							<p>
+								Frem til midt på 1990-tallet gikk det meste av inntektene fra norsk oljevirksomhet til nedbetaling av gjeld og privat og offentlig forbruk. Fra tidlig på 2000-tallet gikk det meste av statens inntekter fra virksomheten til oppbyggingen av et statlig fond. Ved inngangen til 2014 var dette oljefondet (Statens pensjonsfond – Utland) verdsatt til over 5000 milliarder kroner. Det tilsvarte mer enn 1 million per nordmann.
+							</p>
+							<p>
+								Norsk oljevirksomhet eller den norske oljeerfaringen har i mange internasjonale sammenhenger blitt fremhevet som et av få vellykkede eksempler på at en nasjon har forvaltet en stor petroleumsressurs på en måte som har kommet hele samfunnet til gode.
+
+							</p>
+							<p>
+								Historien er imidlertid ikke noen rettlinjet utvikling preget av en gradvis, harmonisk tilnærming til utfordringene man sto overfor. Selv der man kom frem varige løsninger fantes det ofte en omfattende forhistorie preget av interessemotsetninger og konflikt
+							</p>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page9Drilling">
+				<div data-role="header" id="txtHeader">
+					<h1>Boring</h1>
+					<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">informasjonen</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page10Chemistry">
+				<div data-role="header" id="txtHeader">
+					<h1>Kjemi</h1>
+					<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">informasjonen</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page11Refining">
+				<div data-role="header" id="txtHeader">
+					<h1>Raffinering</h1>
+					<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">informasjonen</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page12Geology">
+				<div data-role="header" id="txtHeader">
+					<h1>Geologi</h1>
+					<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">informasjonen</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page13History">
+				<div data-role="header" id="txtHeader">
+					<h1>Petroleumshistorie</h1>
+					<a data-role="button" id="btnBack" href="#page2mainMenu"
+					data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">informasjonen</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page14Math">
+				<div data-role="header" id="txtHeader">
+					<h1>Gangetabellen</h1>
+					<a data-role="button" id="btnBack" href="#page2mainMenu" data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">informasjonen</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page15References">
+				<div data-role="header" id="txtHeader">
+					<h1>Referanser</h1>
+					<a data-role="button" id="btnBack" href="#page2mainMenu" data-inline="true">Back</a>
+				</div>
+				<div data-role="content">
+					<div class="div-widget">
+						<span id="txtInfo">Kilder:</span>
+					</div>
+				</div>
+			</div>
+			<div data-role="page" id="page16">
+				<div data-role="header" id="txtHeader">
+					<h1>hello</h1>
+				</div>
+				<div data-role="content">
+					<img src="" />
+					<form action="http://" method="POST">
+						<div data-role="fieldcontain">
+							<label for="text1">Sett gruppenavn:</label>
+							<input type="text" id="text1" />
+						</div>
+						<a data-role="button" id="btnStart">Knapp</a>
+					</form>
+				</div>
+				<div data-role="footer" data-position="fixed">
+					<a data-role="button">Tilbake</a>
+					<a data-role="button">frem</a>
+				</div>
+			</div>
+	</body>
+
+</html>

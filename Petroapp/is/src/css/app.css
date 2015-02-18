@@ -1,0 +1,18 @@
+
+ 
+#btnMain {
+	
+   background: #DCDCDC;
+   padding: 30px; 						/*størrelsen på knapper. høyde, lengde */
+   margin: 20px;
+   color: black;
+   font-size: 15px;
+   border: 1px solid #132b14;
+   
+   }
+
+
+
+/*  height: 100px !important;
+    border: 1px solid #132b14;
+  /*
