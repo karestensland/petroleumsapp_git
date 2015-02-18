@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>title</title>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
+
+		<script type="text/javascript">
+			function blockMove() {
+				event.preventDefault();
+			}
+		</script>
+		<body ontouchmove="blockMove()">
+
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<script src="lib/jquery-1.6.4.js"></script>
+			<script src="lib/jquery.mobile-1.1.0.js"></script>
+			<link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
+			/>
+			<link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />
+
+			<script type="text/javascript">
+				var gvalue = "";
+				function setCookie(gname, exdays) {
+
+					gvalue = document.getElementById('groupName').value;
+					console.log("Gruppenavn: " + gvalue);
+					var d = new Date();
+					d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+					var expires = "expires=" + d.toGMTString();
+					document.cookie = gname + "=" + gvalue + "; " + expires;
+				}
+
+				function getCookie(gname) {
+					var name = gname + "=";
+					var ca = document.cookie.split(';');
+					for (var i = 0; i < ca.length; i++) {
+						var c = ca[i];
+						while (c.charAt(0) == ' ')
+						c = c.substring(1);
+						if (c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+						}
+					}
+					return "";
+				}
+
+				function createTitle() {
+					document.getElementById("group_title").innerHTML = "Velkommen&nbsp;&nbsp;" + gvalue;
+				}
+
+				/*
+				 function checkCookie() {
+				 var user=getCookie("username");
+				 if (user != "") {
+				 alert("Welcome again " + user);
+				 } else {
+				 user = prompt("Please enter your name:","");
+				 if (user != "" && user != null) {
+				 setCookie("username", user, 1);
+				 }
+				 }
+				 }
+				 */
+			</script>
+	</head>
+
+	<body>
+		<!--<height: 100%></height:>-->
+		<div data-role="page" id="page1GroupName">
+			<div data-role="header" id="txtHeader">
+				<h1>App for besøkende til petroleumsinstituttet ved UiS</h1>
+			</div>
+			<div data-role="content">
+				<img id="imgStart" src="images/L3Rvb2xzL3Bob3RvYWxidW1fdmlldy9jdXN0b21lci9pbWcvNDA2Ny9tZWRpdW0yYy80MDY3MjMuanBnL0Nyb3AvP3g9MiZ5PTEmd2lkdGg9NzAwJmhlaWdodD00NjY.jpeg"
+				width="800" height="500" style="display: block; margin: 0 auto" />
+				<form action="http://" method="POST">
+					<div data-role="fieldcontain">
+						<label for="text1">Fyll inn gruppenavn</label>
+						<input type="text" id="groupName" />
+					</div>
+					<a data-role="button" href="#page2mainMenu" onclick="setCookie('group name', 1);createTitle();">Start app</a>
+				</form>
+			</div>
+		</div>
+		<div data-role="page" id="page2mainMenu">
+			<div data-role="header" id="txtHeader">
+				<h1 id="group_title">"tittel"</h1>
+				<a data-role="button" id="btnBack" href="#page1GroupName">Back</a>
+			</div>
+			<div data-role="content">
+				<img id="imgMain" src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="700" height="350"
+				style="display: block; margin: 0 auto" />
+				<div class="ui-grid-b">
+					<div class="ui-block-a"></div>
+					<div class="ui-block-b"></div>
+					<div class="ui-block-c"></div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page5Information">Informasjon</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="quiz.html">Quiz</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page14Math">Gangetabell</a>
+					</div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page6Knowledge">Interessant å vite</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page13History">Olje og gass historier</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page15References">Referanser</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page4QuizFinish">
+			<div data-role="header" id="txtHeader">
+				<h1>Du er ferdig</h1>
+			</div>
+			<div data-role="content">
+				<img src="images/Uis.png" style="display: block; margin: 0 auto" />
+				<a data-role="button" href="#page2mainMenu">Hovedmeny</a>
+			</div>
+		</div>
+		<div data-role="page" id="page5Information">
+			<div data-role="header" id="txtHeader">
+				<h1>Institutt for petroleumsteknologi</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu"
+				data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page6Knowledge">
+			<div data-role="header" id="txtHeader">
+				<h1>Interessant å vite</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu">Back</a>
+			</div>
+			<div data-role="content">
+				<img id="imgMain" src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="700" height="350"
+				style="display: block; margin: 0 auto" />
+				<div class="ui-grid-b">
+					<div class="ui-block-a"></div>
+					<div class="ui-block-b"></div>
+					<div class="ui-block-c"></div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page7Exploration">Leting</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page8Production">Utvinning</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page9Drilling">Boring</a>
+					</div>
+					<div class="ui-block-a">
+						<a data-role="button" id="btnMain" href="#page10Chemistry">Kjemi</a>
+					</div>
+					<div class="ui-block-b">
+						<a data-role="button" id="btnMain" href="#page11Refining">Raffinering</a>
+					</div>
+					<div class="ui-block-c">
+						<a data-role="button" id="btnMain" href="#page12Geology">Geologi</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page7Exploration">
+			<meta ontouchmove="">
+			<div data-role="header" id="txtHeader">
+				<h1>Leting</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo"> Siden Ekofiskfunnet ble påvist høsten 1969 har oljevirksomheten vært en dominerende faktor i utviklingen av det norske samfunnet. Da produksjonen på norsk kontinentalsokkel nådde en historisk topp i årene rundt år 2000 var Norge verdens tredje største eksportør av både olje og gass.
+
+						Frem mot 2014 falt produksjonen av olje, mens produksjonen av gass fortsatte å øke. I 2012 sto Norge for 2,1 prosent av verdens samlede oljeproduksjon og 3,4 prosent av den samlede produksjonen av gass. Petroleumssektoren sto samme år for 52 prosent av Norges samlede eksport.
+
+						Frem til midt på 1990-tallet gikk det meste av inntektene fra norsk oljevirksomhet til nedbetaling av gjeld og privat og offentlig forbruk. Fra tidlig på 2000-tallet gikk det meste av statens inntekter fra virksomheten til oppbyggingen av et statlig fond. Ved inngangen til 2014 var dette oljefondet (Statens pensjonsfond – Utland) verdsatt til over 5000 milliarder kroner. Det tilsvarte mer enn 1 million per nordmann.
+
+						Norsk oljevirksomhet eller den norske oljeerfaringen har i mange internasjonale sammenhenger blitt fremhevet som et av få vellykkede eksempler på at en nasjon har forvaltet en stor petroleumsressurs på en måte som har kommet hele samfunnet til gode.
+
+						Historien er imidlertid ikke noen rettlinjet utvikling preget av en gradvis, harmonisk tilnærming til utfordringene man sto overfor. Selv der man kom frem varige løsninger fantes det ofte en omfattende forhistorie preget av interessemotsetninger og konflikt.
+
+						Overblikk over 60-tallet
+						Norske myndigheter ble først kjent med muligheten for å finne olje og gass på kontinentalsokkelen utenfor norskekysten da det amerikanske oljeselskapet Phillips i 1962 ba om tillatelse til å utføre seismiske undersøkelser i Nordsjøen.
+
+						For å styrke rettigheten til de aktuelle områdene proklamerte Norge den 31. mai 1963 at havbunnen og undergrunnen i områdene utenfor norskekysten var underlagt norsk statshøyhet. Norge inngikk deretter avtaler om deling av kontinentalsokkelen etter midtlinjeprinsippet med Storbritannia og Danmark.
+
+						Det ble deretter utformet et konsesjonsregelverk som ble gjort gjeldende i form av en kongelig resolusjon den 9. april 1965. Fire dager sener ble den første konsesjonsrunden på norsk sokkel utlyst. Det ble tildelt 22 utvinningstillatelser for 78 blokker til oljeselskaper eller grupper av selskaper.
+
+						Sommeren 1966 ble den første letebrønnen boret på norsk kontinentalsokkel. Brønnen var tørr. Det store gjennombruddet for norsk oljevirksomhet kom da Ekofiskfeltet ble påvist høsten 1969.
+
+						Overblikk over 70-tallet
+						Utbyggingen av de første store olje- og gassfeltene på norsk sokkel ble dominert av utenlandske selskaper. Myndighetene hadde imidlertid som målsetting å bygge opp et norsk oljemiljø. Et sentralt virkemiddel for å styrke utviklingen av et norsk oljemiljø ble opprettelsen av Statoil i 1972.
+
+						Fra opprettelsen i 1972 har Statoil spilt en hovedrolle i norsk oljevirksomhet. Selskapet fikk i en periode 50 prosent av alle nye tildelinger. Statoils mandat, størrelse og strategier har vært gjenstand for mange kontroverser.
+
+						Myndighetene ønsket også en kompetent norsk industri relatert til leting, utbygging- og drift av installasjonene på kontinentalsokkelen og bearbeidelse av petroleum som ressurs. Oljeleverandørindustriens utvikling har vært preget av både kriser og suksess.
+
+						En sentral målsetning i den tidlige norske oljepolitikken var et moderat oljetempo for å unngå å bli for avhengig av den nye ressursen. Tidlig på 1990-tallet denne målsetningen forlatt. I 2013 ble det diskutert hvor vidt et alt for høyt investeringsnivå likevel hadde gjort norsk økonomi sårbart.
+
+						Allerede tidlig på 1970-tallet ble det lagt stor vekt på at oljevirksomheten skulle utformes på en miljømessig forsvarlig måte. I 1970-årene var oljevirksomheten konsentrert til områdene sør for Stad (Nordsjøen).
+
+						Fra 1980-tallet beveget virksomheten seg nordover til Norskehavet og Barentshavet. Oljeindustrien møtte motstand fra miljøorganisasjoner og fiskeriinteresser som mente sårbare områder burde beskyttes for petroleumsvirksomhet. Det bredte seg dessuten en uro for hva slags konsekvenser klimautfordringene kunne få for et oljedominert Norge.
+
+						Den tidlige fase
+						Det var et stort gassfunn ved Groningen i Nederland i 1959 som for alvor fikk oljeindustrien til å vurdere muligheten for å finne olje og gass i Nordsjøen. Man visste at den type bergarter som var på land der gassen ble funnet, også strakte seg ut i havet. I borevirksomheten offshore (i havet) som startet kort tid etter kunne oljeselskapene benytte seg av teknologi fra Mexicogolfen, der amerikansk oljeindustri hadde begynt med boring fra plattformer ute i havet.
+
+						Tidlig på 1960-tallet henvendte en rekke oljeselskaper seg til stater med kyststripe ut mot Nordsjøen og ba om tillatelse til å bore etter olje. Den første formelle henvendelsen til Norge kom fra det amerikanske oljeselskapet Phillips den 29. oktober 1962. Denne gikk til Trygve Lie, som ledet et kontor med mål å få utenlandske selskaper til å etablere seg i Norge. Han sendte henvendelsen videre til juristen Jens Evensen i Utenriksdepartementet .
+
+						I Danmark hadde oljeselskapene Gulf og Shell sammen med reder- og industrigruppen A.P. Møller fått enerett på oljeutvinning. Phillips ønsket en tilsvarende posisjon i Norge. Det ble imidlertid aldri aktuelt. Norge hadde erfaring med utenlandske selskaper på jakt etter naturressurser, ikke minst som følge av vannkraften og de såkalte fosselovene. I sin skriftlige henvendelse til norske myndigheter ba Phillips kun om lov til å drive seismiske undersøkelser. Det fikk selskapet.
+
+						Før det var aktuelt med oljeboring måtte det avklares hvilke deler av Nordsjøen som eventuelt tilhørte Norge. Dernest måtte det utvikles et lovverk som gjorde det mulig å regulere den potensielt nye virksomheten.
+
+						Delelinjeforhandlingene
+						Tidlig på 1960-tallet hadde Norge en fiskerigrense som strakte seg beskjedne 12 nautiske mil (ca. 2,2 mil) ut fra kysten. Resten ble regnet som internasjonalt farvann. Fiskerigrensene avklarte retten til fisket i havet, ikke til aktivitet på havbunnen.
+
+						Det folkerettslige utgangspunktet for en avklaring var Genèvekonvensjonen av 1958 om kontinentalsokkelen. Konvensjonen, som bygde på et midtlinjeprinsipp, hadde en formulering om at kontinentalsokkelen skulle avgrenses til områder grunnere enn 200 meters dyp. Den slo imidlertid samtidig fast at grensen kunne utvides hvis det var mulig å utvinne naturressurser enda dypere.
+
+						Embetsmennene i Utenriksdepartementet fryktet en stund at nabostatene ville hevde at den norske kontinentalsokkelen skulle avgrenses av Norskerenna. Den 31. mai 1963 slo Norge gjennom en kongelig resolusjon ensidig fast at havbunnen og undergrunnen i de undersjøiske områder utenfor Norskekysten var undergitt norsk statshøyhet for så vidt angikk utnyttelse og utforskning av naturforekomster, og at en avgrensing til nabostatene ville ta utgangspunkt i et midtlinjeprinsipp.
+
+						En slik ensidig erklæring var avhengig av aksept fra andre land, først og fremst nabostatene. Storbritannia ønsket en avtale så fort som mulig, og den 10. mars 1965 ble det en delelinjeavtale mellom Norge og Storbritannia underskrevet. Avtalen bygde på midtlinjeprinsippet. Både den britiske og den norske kystlinjen var lange, og med dette var grensen i store deler av Nordsjøen satt.
+
+						8. desember 1965 var en avtale med Danmark også klar. Med dette hadde Norge fått jurisdiksjonsrett over en andel av Nordsjøen med et flateinnhold som var nesten like stort som det norske fastlandet.
+
+						Det var fremdeles mye som måtte avklares innen internasjonal havrett. Lenger nord skulle det dessuten ta mange år før alle viktige delelinjer var avklart. Det avgjørende for Norge var at man hadde fått en tilstrekkelig avklaring for å starte forhandlinger med oljeselskapene som ønsket å starte leting i det som var den norske delen av Nordsjøen.
+
+						Les mer om forhandlingene om Norges kontinentalsokkel.
+						Konsesjonssystemet
+						Med resolusjonen av 31. mai 1963 hadde den norske staten gjort seg til eier av mulige naturforekomster på en stor del av kontinentalsokkelen i Nordsjøen. Neste steg ble å utforme et egnet lov- og regelverk for mulige aktiviteter på sokkelen. Arbeidet med dette ble lagt til det nyopprettede Kontinentalsokkelutvalget ledet av Jens Evensen.
+
+						Norge gikk inn for samme system som Storbritannia, hvor grupper av selskaper fikk tildelt andeler i utlyste blokker. De norske blokkene var kvadrater på rundt 500 km2, beregnet ut fra breddegrader og lengdegrader.
+
+						Statens inntekter skulle komme i form av skatter og eventuelt direkte andeler av den produserte oljen (royalty) etter at produksjonen var i gang. Mange av formuleringene som ble tatt inn i det som skulle bli en grunnmur i det norske konsesjonsregimet, kongelig resolusjon av 9. april 1965, var utformet i et tett samarbeid mellom Jens Evensen og representanter for de utenlandske oljeselskapene.
+
+						Til tross for at interessen for å starte opp boring var stor, fikk man ingen offentlig debatt om den første oljepolitikken. Stortinget var i første omgang kun involvert da det i Lov av 3. juni 1965 vedtok en særskilt skattelette for oljeselskap. Loven ble vedtatt etter en meget kort debatt. Det ble vist til at hvis man ikke vedtok en skattelette ville ikke staten kunne operere med en royalty i avtalen med selskapene. Alternativet som ble satt opp var at industrien ikke var villig til å investere i det hele tatt.
+
+						Både i den kongelige resolusjonen og i arbeidsavtalene selskapene måtte underskrive for å få tildelt konsesjoner, finnes det bestemmelser som sikrer staten en suveren rett til å gripe regulerende inn overfor selskapenes praksis på et senere tidspunkt. Resolusjonen inneholdt ingen sikkerhetsbestemmelser, men slo fast at hvis staten skulle oppnevne inspektører, måtte selskapene gi disse full adgang og rette seg etter de pålegg disse måtte gi (§ 45).
+
+						Det var flere likhetstrekk med den type konsesjonsregime som ble utviklet i tilknytning til utbyggingen av vannkraften tidlig på 1900-tallet. Prinsippet om hjemfallsrett var bygd inn i flere bestemmelser. Utvinningstillatelser ble i første omgang gitt for en periode på seks år. Allerede etter tre år forpliktet selskapene seg til å gi fra seg en fjerdedel av den tildelte blokken (§ 20). Gitt at selskapene ville beholde en tildelt blokk etter en seksårsperiode, måtte de tre år etter dette frasi seg nok en fjerdedel av den opprinnelige tildelingen. De delene av en blokk som ble beholdt etter en forlenget tildeling, kunne beholdes i hele 40 år (§ 22).
+
+						I forhandlingene forut for den kongelige resolusjonen og de endelige tildelingene var selskapene mest opptatt av de finansielle betingelsene. Selskapene forventet en royalty på 12,5 prosent, slik det var i Storbritannia. Men Evensen sørget for at denne ble på 10 prosent.
+
+						Royalty er en avgift som innebærer at staten mottar en bestemt prosent av produksjonsverdien, ikke som for skattene; en prosentdel av overskuddet. Sett fra en produsentnasjons ståsted, var det derfor en potent inntektskilde. En reduksjon på 2,5 prosent av royalty var mer verd enn en tilsvarende reduksjon i skattene.
+
+						Allerede den 13. april 1965, fire dager etter den kongelige resolusjonen og før den endelige avklaringen av skattespørsmålet, ble oljeselskapene invitert til å søke om konsesjon til å drive oljevirksomhet på norsk sokkel. Forut for tildelingen, vedtok Stortinget unntaksbestemmelser som sørget for reduserte skatter for oljeselskaper. Mest fornøyd var de amerikanske selskapene. De fikk unntak fra en bestemmelse som forlangte at selskapene som deltok, skulle opprette norske datterselskaper. Med gjeldende amerikanske skatteregler innebar dette at all letning på norsk sokkel kunne trekkes fra skatten i USA.
+
+						Selv om Evensen drev et aktivt spill for å lose oljesaken gjennom forvaltningen, finnes det ingen indikasjoner på at han brøt med de overordnede forutsetningene fra sine politiske oppdragsgivere. Den overordnede målsettingen var å få de utenlandske selskapene til å engasjere seg i størst mulig grad. Slik ville sannsynligheten for at man virkelig fant olje, være størst.
+
+						Samtidig var man opptatt av å sikre tilgang til fremmed valuta, og hindre at utenlandsk valuta forsvant ut av Norge. Hvis norske oljeselskaper skulle stå for en stor del av aktiviteten ville de være avhengige av å leie inn utenlandske spesialselskaper med oljeteknologisk kompetanse.
+
+						En liten, men betydningsfull gruppe norske selskaper ønsket å satse på oljeleting i Nordsjøen allerede fra starten. Dette gjaldt blant annet Fred. Olsen og Norsk Hydro. Disse mente interessen fra de utenlandske selskapene var en indikasjon på at muligheten for funn var gode. Men uten spesialkompetanse var de avhengig av å gå i allianse med de utenlandske selskapene.
+
+						Jens Evensen signaliserte imidlertid til flere store utenlandske oljeselskap at en allianse med norske selskap ikke ville styrke søknaden deres. Alt i alt ble den norske deltagelsen i konsesjonsrunden liten, ikke minst sammenlignet med den første tildelingen på britisk side av Nordsjøen.
+
+						Uten tilgang på selvstendig oljekompetanse og med begrensede investeringsmidler, minnet Norges posisjon på 1960-tallet mye om den mange fattige land med potensielle petroleumsressurser i sør har stått overfor. </span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page8Production">
+			<div data-role="header" id="txtHeader">
+				<h1>Produksjon</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page9Drilling">
+			<div data-role="header" id="txtHeader">
+				<h1>Boring</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page10Chemistry">
+			<div data-role="header" id="txtHeader">
+				<h1>Kjemi</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page11Refining">
+			<div data-role="header" id="txtHeader">
+				<h1>Raffinering</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page12Geology">
+			<div data-role="header" id="txtHeader">
+				<h1>Geologi</h1>
+				<a data-role="button" id="btnBack" href="#page6Knowledge" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page13History">
+			<div data-role="header" id="txtHeader">
+				<h1>Petroleumshistorie</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu"
+				data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page14Math">
+			<div data-role="header" id="txtHeader">
+				<h1>Gangetabellen</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">informasjonen</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page15References">
+			<div data-role="header" id="txtHeader">
+				<h1>Referanser</h1>
+				<a data-role="button" id="btnBack" href="#page2mainMenu" data-inline="true">Back</a>
+			</div>
+			<div data-role="content">
+				<div class="div-widget">
+					<span id="txtInfo">Kilder:</span>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page16">
+			<div data-role="header" id="txtHeader">
+				<h1>hello</h1>
+			</div>
+			<div data-role="content">
+				<img src="" />
+				<form action="http://" method="POST">
+					<div data-role="fieldcontain">
+						<label for="text1">Sett gruppenavn:</label>
+						<input type="text" id="text1" />
+					</div>
+					<a data-role="button" id="btnStart">Knapp</a>
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<a data-role="button">Tilbake</a>
+				<a data-role="button">frem</a>
+			</div>
+		</div>
+	</body>
+
+</html>

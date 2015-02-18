@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+       	<script src="jquery.js"></script>
+		<script>
+			$(function() {
+				$("#includedContent").load("db_conn/dbConn.php");
+			});
+		</script>
+
+    </head>
+    
+    <body>
+        <div data-role="page" id="page3Quiz">
+            <div data-role="header">
+                <h1>Quiz</h1>
+                <a data-role="button" href="#page2mainMenu">Exit</a>
+            </div>
+            <div data-role="content">
+				<div>
+					<script type="text/javascript">
+						var name="";
+						function getCookie(gname) {
+							name = gname + "=";
+							var ca = document.cookie.split(';');
+
+							for(var i=0; i<ca.length; i++) {
+								var c = ca[i];
+								while (c.charAt(0)==' ') c = c.substring(1);
+								if (c.indexOf(name) == 0) {
+									name = c.substring(name.length, c.length);
+									console.log("Cookie name: " + name);
+								}
+							}
+						}
+						//function startQuiz(){
+						$('.startQuiz2').on('vclick', function(e){
+							console.log("Start request");
+							var ajaxRequest;  // The variable that makes Ajax possible!
+
+							try{
+								// Opera 8.0+, Firefox, Safari
+								ajaxRequest = new XMLHttpRequest();
+							} catch (e){
+								// Internet Explorer Browsers
+								try{
+									ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+								} catch (e) {
+									try{
+										ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+									} catch (e){
+										// Something went wrong
+										alert("Your browser broke!");
+										return false;
+									}
+								}
+							}
+							// Create a function that will receive data sent from the server
+							ajaxRequest.onreadystatechange = function(){
+								if(ajaxRequest.readyState == 4){
+									// Get the data from the server's response
+									//var ajaxDisplay = document.getElementById('quizContent');
+									//ajaxDisplay.innerHTML = ajaxRequest.responseText;
+									$('.quizContent').empty();
+									var response =ajaxRequest.responseText;
+									$('.quizContent').append(response).listview('refresh');
+
+									console.log(response);
+
+								};
+							};
+							ajaxRequest.open("GET", "quiz_getQuestion2.php");
+							ajaxRequest.send(null);
+
+						});
+
+						function answer()
+						{
+							
+						}
+						var count = 1;
+						/*
+						$('.startQuiz').on('vclick', function(e){
+						count++;
+						var newItem = '<li>Item' + count + '</li>';
+						$('.quizContent').append(newItem).content('refresh');
+						});
+
+						$('.divbtn').on('vclick', function(e){
+						count++;
+						var newItem = '<li data-role="list-divider">Divider</li>';
+						$('.quizContent').append(newItem).listview('refresh');
+						});
+						*/
+						$('.quizAnswer1').on('vclick', function(e){
+							count = 0;
+							$('.quizAnswer').empty();
+						});
+						$('.quizAnswer2').on('vclick', function(e){
+							count++;
+							var newItem = '<tr style="width:50%" ><td><div style="height:20vh;" class="quizAnswer3">asdfasdf</div></td><td><div style="height:20vh;" class="quizAnswer4">Jackson</div></td></tr>';
+							$('.quizAnswer:visible').append(newItem).listview('refresh');
+						});
+
+					</script>
+				</div>
+				<div data-role="content">
+					<!--<a data-role="button" onclick="startQuiz();">Start</a>-->
+					<a data-role="button" class="startQuiz2">Start</a>
+				</div>
+				<div class ="quizContent">
+					<div class="quizQuestion">
+						<span>Question fra dbasdf</span>
+					</div>
+					<div class="quizAnswer">
+						<table style="width:100%" >
+							<tr style="width:50%" >
+								<td><div style="height:20vh;" class="quizAnswer1"></div></td>
+								<td><div style="height:20vh;" class="quizAnswer2"></div></td>
+							</tr>
+							<tr style="width:50%" >
+								<td><div style="height:20vh;" class="quizAnswer3"></div></td>
+								<td><div style="height:20vh;" class="quizAnswer4"></div></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+            
+            <div data-role="content">
+                <form action="http://" method="POST">
+                    <span>Question fra db</span>
+                </form>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a data-role="button" href="#page4QuizFinish">Button</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button">Button</a>
+                    </div>
+                    <div class="ui-block-a">
+                        <a data-role="button">Button</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a data-role="button">Button</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
