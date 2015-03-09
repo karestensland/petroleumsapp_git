@@ -1,9 +1,4 @@
 <?php
-
-
-
-mb_internal_encoding("UTF-8");
-
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "root";
@@ -22,3 +17,4 @@ if (mysqli_connect_errno()) {
 }
 
 ?>
+

@@ -55,8 +55,8 @@
 .ui-body-a,
 .ui-overlay-a {
 	border: 1px solid 		#444 /*{a-body-border}*/;
-	background: 			#222 /*{a-body-background-color}*/;
-	color: 					#fff /*{a-body-color}*/;
+	background: 			#B5CAEF /*{a-body-background-color}*/;
+	color: 					#B5CAEF /*{a-body-color}*/;
 	text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 1px /*{a-body-shadow-radius}*/ #111 /*{a-body-shadow-color}*/;
 	font-weight: normal;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #444 /*{a-body-background-start}*/), to( #222 /*{a-body-background-end}*/)); /* Saf4+, Chrome */
@@ -769,10 +769,7 @@ a.ui-link-inherit {
 /* button inner top highlight
 -----------------------------------------------------------------------------------------------------------*/
 
-.ui-btn-inner {
-	border-top: 1px solid 	#fff;
-	border-color: 			rgba(255,255,255,.3);
-}
+
 
 
 /* corner rounding classes

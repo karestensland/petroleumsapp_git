@@ -1,4 +1,5 @@
 
+  /*
   ul {
   	list-style: none;padding: 0px;margin: 0px;
   }
@@ -13,39 +14,134 @@
   li:hover li a:hover {background: #000;}
   #drop-nav li ul li {border-top: 0px;}
   
+  */
+body
+{
+background: #B5CAEF; /* #84A5DC;  http://paletton.com/#uid=1260u0kllllaFw0g0qFqFg0w0aF*/
+/* As hex codes
+
+.color-primary-0 { color: #93A537 }
+.color-primary-2 { color: #BDCE67 }
+.color-primary-3 { color: #6B7B15 }
+.color-primary-4 { color: #455200 }
+ text-align: center;
+ left margin: auto;
+ right margin: auto;  
+  */
+ 
+ margin: 0 auto;
+ with: 700px;
+
+  font-family: arial, sans-serif;
   
+  /* 
+   *  width:100%;
+   height:100%;
+   * 
+   * 
+ Lager blogg-format midtstilt
+  	padding: 0;
+	margin: 10px auto;	
+	width: 1200px;
+	border: 1px solid #dce; */
+}
+
+
+
+/*headertekst på adminsiden*/
+#title {
+  text-align: center;
+  color: #000000;;
+  margin: 40px 0 0 0;  /*avstand til topp*/
+}
+#subtitle {
+  text-align: center;
+  color: #000000;
+ 
+}
+  
+  /*Denne
   div.content {
  
     clear: left;
      padding: 0;
          margin: 0;
+}*/
+  
+
+  
+  
+  /*faner på adminsiden*/
+ol#toc li {
+	background: #84a5dc;
+  background-image: -webkit-linear-gradient(top, #84a5dc, #8bb1ed);
+  background-image: -moz-linear-gradient(top, #84a5dc, #8bb1ed);
+  background-image: -ms-linear-gradient(top, #84a5dc, #8bb1ed);
+  background-image: -o-linear-gradient(top, #84a5dc, #8bb1ed);
+  background-image: linear-gradient(to bottom, #84a5dc, #8bb1ed);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  -webkit-box-shadow: 3px 3px 2px #666666;
+  -moz-box-shadow: 3px 3px 2px #666666;
+  box-shadow: 3px 3px 2px #666666;
+  font-family: Arial;
+  color: #ffffff;
+   /*font-size: 20px;*/
+  padding: 15px;
+  text-decoration: none;
+  outline: none;
+	
+	
+	
+	
+	
+     /*background-color:  #84A5DC;*/
+     /*border-radius: 5px;   /*kant på knapp*/
+  float:left;   /*Setter knappene etter hverandre*/
+   position:relative;  /*Midtstiller knappene2*/
+   left:23%;   /*Midtstiller knappene*/
+ 	text-align:center;   /*MIdtstiller tekst på knappene*/
+     /*color: #FFFFFF;  */
+    padding: 0px; /* ny farge oppå markert knapp 0px 5px; */
+ margin: 0 14px 0 0; /*Mellomrom mellom "knapper"*/
+   width: 200px;     /*bredden på knappen*/
 }
 
-div.content.inactive {
-    display: none;
-}
 
+div.content.inactive { 
+    display: none;   /*gjør at fanene ikke kommer underhverandre, men følger knappen*/
+} 
+
+  /*Ramme rundt spørsmål*/
 div.content.active {
    border: #9AC078 solid 1px;
-   border-radius: 5px;
+   border-radius: 50px;
     clear: left;
      padding: 0;
          margin: 0;
 }
 
+ /*Knappen*/
 ol#toc {
-    height: 2em;
-    list-style: none;
-    margin: 0;
+	list-style: none;
     padding: 0;
+    
+    
+ }   
+    
+    
+     /*Denne
+    height: 2em;
+    left margin: auto;
+ 	right margin: auto;  
     font-family: "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-    color: #FFFFFF;
-font-size: 100%;
-
+    color: #6B7B15;
+	font-size: 100%;
 }
 
 ol#toc li {
-    background-color:  #2b5ba1 ;
+    background-color:  #9AC078 ;
     border-radius: 5px;
  text-align:center; 
     float: left;
@@ -56,25 +152,47 @@ ol#toc li {
     margin: 0 14px 0 0;
     width: 160px;
 
-}
+}*/ 
+
+
+
+
 
 ol#toc a {
-
-    display: block;
-
-    height: 5em; /*høyden på knappen*/
+    display: block;  /*formatkrasj på knappen*/
+    height: 3em; /*høyden på knappen*/
+    padding: 20px 10px 5px 10px;
+    /*padding = avstand fra tekst til knappkant
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;*/
+    text-decoration: none;  /*understrek av tekst*/
+    color: #FFFFFF; 
+  /*display: block;
+    height: 2em;
     padding-left: 10px;
     text-decoration: none;
-    color: #FFFFFF; 
-
+    color: #FFFFFF; */
 
 
 }
 
 ol#toc a:hover {
-    background-color: #a0c2f9  ;
+	  background: #5d84c5;
+  background-image: -webkit-linear-gradient(top, #5d84c5, #3470d9);
+  background-image: -moz-linear-gradient(top, #5d84c5, #3470d9);
+  background-image: -ms-linear-gradient(top, #5d84c5, #3470d9);
+  background-image: -o-linear-gradient(top, #5d84c5, #3470d9);
+  background-image: linear-gradient(to bottom, #5d84c5, #3470d9);
+  text-decoration: none;
+	
+	border-radius: 13px;
+	
+	
+   /* background-color: #3E66AB  ;
     color: #FFFFFF; 
-    width: 150px;
+    width: 180px;  bredden på fargen knappen*/
 
 
 }
@@ -83,32 +201,65 @@ ol#toc a:hover span {
 }
 
 ol#toc li.current a {
-    background-color:  #235574  ;
-    width:50px;
- 
+    background-color:  #25519B;
+    width:100px;
     font-weight: bold;
     color: #FFFFFF; 
-
 }
+
 
 ol#toc li.current span {
 
 }
 
+
+
 ol#toc span {
-    
     display: block;
     line-height: 2em;
     padding-right: 10px;
-
 }
+
+/* Den aktive fanen, tykk skrift og mørk farge. Unødvendig??*/
 ol#toc li a.active {
-    background-color:   #235574  ;
+    background-color:   #3E66AB  ;
     color:  #FFFFFF;
     font-weight: bold;
+    border-radius: 13px;
 }
 
 ol#toc li a.active span {
-
 }
 
+
+.content{
+
+  
+  
+} 
+
+#newQuestion, #allQuestions, #newGroup, #activeGroup, #result{
+     /*background-color:  #455200;
+     /*vborder-radius: 5px;  kant på knapp*/
+     /*float:left;   /*Setter knappene etter hverandre*/
+   	position:relative;  /*Midtstiller tekstfelt under knapper1*/
+    left:23%;   /*Midtstiller tekstfelt under knapper1**/
+ 	text-align:left;   /*MIdtstiller tekst på knappene*/
+ 	color: #000000;
+   
+  
+}
+
+  
+    /*Ikke i bruk midtstilt en annen/
+  .float_center {
+  float: right;
+
+  position: relative;
+  left: -50%; /* or right 50% 
+  text-align: left;
+}
+.float_center > .child {
+  position: relative;
+  left: 50%;
+} */
