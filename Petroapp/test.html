@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>test</title>
+		<meta name="author" content="Kåre Stensland" />
+		<!-- Date: 2015-02-18 -->
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	</head>
+	<body>
+		<button id="button">
+			Hent aktiv gruppe fra server
+		</button>
+		<div class="gruppefavn">
+			Gruppenavn denne skal endreswer
+		</div>
+		<!--<form action="getActiveGroup.php">
+			<input type="submit" value="Submit">
+		</form>-->
+		<script>
+			$(document).ready(function() {
+				$("#button").on("click", function() {
+					
+					// Data serialization and AJAX request here
+					var data = {
+						"action" : "test"
+					};
+					console.log(data);
+					data = $(this).serialize() + "&" + $.param(data);
+					console.log(data);
+					
+					$.ajax({
+						type : "POST",
+						dataType : "json",
+						url : "getActiveGroup.php", //Relative or absolute path to response.php file
+						data : data,
+						success : function(data) {
+							$(".gruppefavn").html("Gruppenavn: " + data["groupName"] + 	"<br />Gruppeid: " + data["groupId"]);
+						},
+						error : function(){
+							alert("feilet");
+						}
+				
+					});
+					
+					return false;
+				});
+				
+			});
+			
+		</script>
+	</body>
+</html>
+
+

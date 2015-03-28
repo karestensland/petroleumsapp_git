@@ -6,7 +6,12 @@
  
  $db = 'petroapp';
 
- $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
- mysqli_select_db($db);
- 
+ $link = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+
+/* check connection */
+if (mysqli_connect_errno()) {
+	printf("Connect failed: %s\n", mysqli_connect_error());
+	exit();
+}
+
 ?>

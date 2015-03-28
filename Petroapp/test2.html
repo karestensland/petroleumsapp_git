@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>test</title>
+		<meta name="author" content="Kåre Stensland" />
+		<!-- Date: 2015-02-18 -->
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	</head>
+	<body>
+		<h1 id="welcome">sdf</h1>
+		<button id="button">
+			legg inn username
+		</button>
+		<input type="text" id="userName">
+		<div class="gruppefavn">
+			Gruppenavn denne skal endreswer
+		</div>
+		<!--<form action="getActiveGroup.php">
+			<input type="submit" value="Submit">
+		</form>-->
+		<script>
+			$(document).ready(function() {
+				var groupName="pest og plage";
+				var groupId="3";
+				$("#welcome").html("Velkommen " + groupName + " !");
+				$("#button").on("click", function() {
+					var userName = $("#userName").val(); 
+					var userNameOK = false;
+					// Data serialization and AJAX request here
+					var data = {
+						"groupId" : groupId,
+						"userName":userName
+					};
+					console.log(data);
+					data = $(this).serialize() + "&" + $.param(data);
+					console.log(data);
+					
+					$.ajax({
+						type : "POST",
+						dataType : "json",
+						url : "setClientName.php", //Relative or absolute path to response.php file
+						data : data,
+						success : function(data) {
+							userNameOK= data["success"];
+						},
+						error : function(){
+							alert("feilet");
+						}
+				
+					});
+					
+					return false;
+				});
+				
+			});
+			
+		</script>
+	</body>
+</html>
+
+

@@ -1,121 +1,77 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<title>title</title>
+		<title>Petroapp</title>
 		<meta charset="utf-8">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<script src="lib/jquery-1.11.2.js"></script>
+		<script src="lib/jquery.mobile-1.4.5.js"></script>
+		<link href="src/css/jquery.mobile.structure-1.4.5.css" rel="stylesheet"/>
+		<link href="src/css/jquery.mobile.theme-1.4.5.css" rel="stylesheet" />
+		<script src="src/js/cookie.js"></script>
+		<script src="src/js/common.js"></script>
+		<script src="src/js/quiz.js"></script>
 
-		<script type="text/javascript">
-			function blockMove() {
-				event.preventDefault();
-			}
-		</script>
-		<body ontouchmove="blockMove()">
-
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<script src="lib/jquery-1.6.4.js"></script>
-			<script src="lib/jquery.mobile-1.1.0.js"></script>
-			<link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
-			/>
-			<link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />
-
-			<script type="text/javascript">
-				var gvalue = "";
-				function setCookie(gname, exdays) {
-
-					gvalue = document.getElementById('groupName').value;
-					console.log("Gruppenavn: " + gvalue);
-					var d = new Date();
-					d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-					var expires = "expires=" + d.toGMTString();
-					document.cookie = gname + "=" + gvalue + "; " + expires;
-				}
-
-				function getCookie(gname) {
-					var name = gname + "=";
-					var ca = document.cookie.split(';');
-					for (var i = 0; i < ca.length; i++) {
-						var c = ca[i];
-						while (c.charAt(0) == ' ')
-						c = c.substring(1);
-						if (c.indexOf(name) == 0) {
-							return c.substring(name.length, c.length);
-						}
-					}
-					return "";
-				}
-
-				function createTitle() {
-					document.getElementById("group_title").innerHTML = "Velkommen&nbsp;&nbsp;" + gvalue;
-				}
-
-				/*
-				 function checkCookie() {
-				 var user=getCookie("username");
-				 if (user != "") {
-				 alert("Welcome again " + user);
-				 } else {
-				 user = prompt("Please enter your name:","");
-				 if (user != "" && user != null) {
-				 setCookie("username", user, 1);
-				 }
-				 }
-				 }
-				 */
-			</script>
 	</head>
 
-	<body>
+	<body ontouchmove="BlockMove()">
 		<!--<height: 100%></height:>-->
 		<div data-role="page" id="page1GroupName">
 			<div data-role="header" id="txtHeader">
 				<h1>App for besøkende til petroleumsinstituttet ved UiS</h1>
+				<p id="groupName" onclick="test1()">
+					her skal gruppenavnet stå
+				</p>
 			</div>
 			<div data-role="content">
-				<img id="imgStart" src="images/L3Rvb2xzL3Bob3RvYWxidW1fdmlldy9jdXN0b21lci9pbWcvNDA2Ny9tZWRpdW0yYy80MDY3MjMuanBnL0Nyb3AvP3g9MiZ5PTEmd2lkdGg9NzAwJmhlaWdodD00NjY.jpeg"
+				<img id="imgStart" src="images/uis_oversikt.jpeg"
 				width="800" height="500" style="display: block; margin: 0 auto" />
 				<form action="http://" method="POST">
 					<div data-role="fieldcontain">
-						<label for="text1">Fyll inn gruppenavn</label>
-						<input type="text" id="groupName" />
+						<label for="text1">Fyll inn clientName</label>
+						<input type="text" id="userName" />
 					</div>
-					<a data-role="button" href="#page2mainMenu" onclick="setCookie('group name', 1);createTitle();">Start app</a>
+				<!--	<a data-role="button" href="#page2mainMenu" onclick="setCookie('clientName', 1);createTitle();">Start app</a>
+					<a data-role="button" href="#page2mainMenu" onclick="setClientName()">Start app</a>-->
+					<a data-role="button"href="#page2mainMenu" id="setUserNameAndContinue">Start app</a>
+					<div id="userExistAlert"></div>
 				</form>
 			</div>
 		</div>
+
 		<div data-role="page" id="page2mainMenu">
 			<div data-role="header" id="txtHeader">
 				<h1 id="group_title">"tittel"</h1>
 				<a data-role="button" id="btnBack" href="#page1GroupName">Back</a>
 			</div>
 			<div data-role="content">
-				<img id="imgMain" src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="700" height="350"
+				<img id="imgMain" src="images/Studiestart.jpg" width="700" height="350"
 				style="display: block; margin: 0 auto" />
 				<div class="ui-grid-b">
 					<div class="ui-block-a"></div>
 					<div class="ui-block-b"></div>
 					<div class="ui-block-c"></div>
 					<div class="ui-block-a">
-						<a data-role="button" id="btnMain" href="#page5Information">Informasjon</a>
+						<a data-role="button" class="btnMain"  href="#page5Information">Informasjon</a>
 					</div>
 					<div class="ui-block-b">
-						<a data-role="button" id="btnMain" href="quiz.html">Quiz</a>
+						<a data-role="button" class="btnMain"id="btnQuiz" href="quiz.html">Quiz</a>
 					</div>
 					<div class="ui-block-c">
-						<a data-role="button" id="btnMain" href="#page14Math">Gangetabell</a>
+						<a data-role="button" class="btnMain" href="#page14Math">Gangetabell</a>
 					</div>
 					<div class="ui-block-a">
-						<a data-role="button" id="btnMain" href="#page6Knowledge">Interessant å vite</a>
+						<a data-role="button" class="btnMain" href="#page6Knowledge">Interessant å vite</a>
 					</div>
 					<div class="ui-block-b">
-						<a data-role="button" id="btnMain" href="#page13History">Olje og gass historier</a>
+						<a data-role="button" class="btnMain" href="#page13History">Olje og gass historier</a>
 					</div>
 					<div class="ui-block-c">
-						<a data-role="button" id="btnMain" href="#page15References">Referanser</a>
+						<a data-role="button" class="btnMain" href="#page15References">Referanser</a>
 					</div>
 				</div>
 			</div>
@@ -147,29 +103,25 @@
 				<a data-role="button" id="btnBack" href="#page2mainMenu">Back</a>
 			</div>
 			<div data-role="content">
-				<img id="imgMain" src="images/Studiestart-09_IMG_0853[1] crop.jpg" width="700" height="350"
-				style="display: block; margin: 0 auto" />
+				<img id="imgMain" src="images/Studiestart.jpg" width="700" height="350" style="display: block; margin: 0 auto" />
 				<div class="ui-grid-b">
-					<div class="ui-block-a"></div>
-					<div class="ui-block-b"></div>
-					<div class="ui-block-c"></div>
 					<div class="ui-block-a">
-						<a data-role="button" id="btnMain" href="#page7Exploration">Leting</a>
+						<a data-role="button" class="btnMain" href="#page7Exploration">Leting</a>
 					</div>
 					<div class="ui-block-b">
-						<a data-role="button" id="btnMain" href="#page8Production">Utvinning</a>
+						<a data-role="button" class="btnMain" href="#page8Production">Utvinning</a>
 					</div>
 					<div class="ui-block-c">
-						<a data-role="button" id="btnMain" href="#page9Drilling">Boring</a>
+						<a data-role="button" class="btnMain" href="#page9Drilling">Boring</a>
 					</div>
 					<div class="ui-block-a">
-						<a data-role="button" id="btnMain" href="#page10Chemistry">Kjemi</a>
+						<a data-role="button" class="btnMain" href="#page10Chemistry">Kjemi</a>
 					</div>
 					<div class="ui-block-b">
-						<a data-role="button" id="btnMain" href="#page11Refining">Raffinering</a>
+						<a data-role="button" class="btnMain" href="#page11Refining">Raffinering</a>
 					</div>
 					<div class="ui-block-c">
-						<a data-role="button" id="btnMain" href="#page12Geology">Geologi</a>
+						<a data-role="button" class="btnMain" href="#page12Geology">Geologi</a>
 					</div>
 				</div>
 			</div>
