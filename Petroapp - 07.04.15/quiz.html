@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Quizasdfa</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="jquery.js"></script>
+		<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+		<!--<link href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" rel="stylesheet" />-->
+		<link href="src/css/app.css" rel="stylesheet" />
+		<link href="src/css/petroapp_v1.css" rel="stylesheet" />
+		<link href="src/css/jquery.mobile.icons.min.css" rel="stylesheet" />
+		
+
+	</head>
+
+	<body>
+		<div data-role="page" id="page3Quiz">
+			<div data-role="header"id="txtHeader">
+				<h1>Quiz</h1>
+				<a data-role="button" href="#page2mainMenu">Exit</a>
+			</div>
+			<div data-role="content">
+				<div>
+					
+				</div>
+				<div class="quizStart">
+
+					<a data-role="button" onclick="quizAnswer('start')" class="startQuiz">Start</a>
+				</div>
+				<div class ="quizContent" style="display:none">
+					<div class="quizQuestion">
+						<span>Question fra db</span>
+					</div>
+					<div class="quizAnswer">
+						<table style="width:100%" >
+							<tr style="width:50%" >
+								<td>
+								<div class="quizBtnAlign" style="height:20vh;">
+									<a data-role="button" onclick="quizAnswer('1')" class="btnQuiz quizAnswer1"></a>
+								</div></td>
+								<td>
+								<div class="quizBtnAlign" style="height:20vh;">
+									<a data-role="button" onclick="quizAnswer('2')" class="quizAnswer2">
+								</div></td>
+							</tr>
+							<tr style="width:50%" >
+								<td>
+								<div class="quizBtnAlign" style="height:20vh;">
+									<a data-role="button" onclick="quizAnswer('3')" class="quizAnswer3">
+								</div></td>
+								<td>
+								<div class="quizBtnAlign" style="height:20vh;">
+									<a data-role="button" onclick="quizAnswer('4')" class="quizAnswer4">
+								</div></td>
+							</tr>
+						</table>
+					</div>
+					
+					
+				</div>
+			</div>
+
+		</div>
+		
+	
+	</body>
+</html>
